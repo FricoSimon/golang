@@ -24,4 +24,10 @@ func main () {
 	b := 2
 	fmt.Println(a + b) 
 
+	// anonymous function
+	func() {
+		fmt.Println("I am an anonymous function")
+	}()
+	
+
 }
