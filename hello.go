@@ -29,5 +29,11 @@ func main () {
 		fmt.Println("I am an anonymous function")
 	}()
 	
+	// anonymous function with a name to a variable
+	greeting := func() {
+		fmt.Println("I am an anonymous function with a name / variable")
+	} 
+		
+	greeting()
 
 }
