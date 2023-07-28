@@ -48,5 +48,14 @@ func main () {
 	fmt.Printf("the type of pi is %T\n", pi)
 	resultSprintf := fmt.Sprintf("the value of pi is %.2f and the type of pi is %T", pi, pi) // Sprintf returns a string
 	fmt.Println(resultSprintf)
+	
+	// if statement with a short statement
+	word := "Hello"
+	//length := len(word)
+	if length := len(word); length >= 5 { // scope of length is only in the if statement
+		fmt.Println("The word has 5 characters")
+	} else {
+		fmt.Println("The word does not have 5 characters")
+	} 
 
 }
