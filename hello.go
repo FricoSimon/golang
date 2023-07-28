@@ -36,4 +36,11 @@ func main () {
 		
 	greeting()
 
+	// parse float to int
+	numberA := 10.5
+	numberB := int(numberA)
+
+	fmt.Println(numberB)
+
+
 }
