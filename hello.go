@@ -2,7 +2,15 @@ package main // only one main per package
 
 import "fmt" // for console
 
+// function signature
+func sum(x, y int) int {
+		return x + y
+	} 
+
 func main () {
+	// call function
+	fmt.Println(sum(2, 3))
+
 	// print to console
 	fmt.Print("Hello ")
 	fmt.Println("World!")
