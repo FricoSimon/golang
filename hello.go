@@ -12,12 +12,23 @@ func multiply (x, y int) int {
 		return multiple
 	}
 
+func names () (string, string) {
+	return "Frico", "Simon"
+}
+
 func main () {
 	// call function
 	fmt.Println(sum(2, 3))
 
 	// call function
 	fmt.Println(multiply(2, 3))
+
+	// call function with ignored return value
+
+	// name1, name2 := names() // multiple return values
+	// fmt.Println(name1, name2)
+	name1, _ := names() // ignore second return value using dash
+	fmt.Println(name1)
 
 	// print to console
 	fmt.Print("Hello ")
