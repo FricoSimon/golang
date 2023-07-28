@@ -7,9 +7,17 @@ func sum(x, y int) int {
 		return x + y
 	} 
 
+func multiply (x, y int) int {
+		multiple := x * y
+		return multiple
+	}
+
 func main () {
 	// call function
 	fmt.Println(sum(2, 3))
+
+	// call function
+	fmt.Println(multiply(2, 3))
 
 	// print to console
 	fmt.Print("Hello ")
@@ -65,5 +73,5 @@ func main () {
 	} else {
 		fmt.Println("The word does not have 5 characters")
 	} 
-
+	
 }
