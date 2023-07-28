@@ -42,5 +42,9 @@ func main () {
 
 	fmt.Println(numberB)
 
+	// constant variable
+	const pi = 3.14
+	fmt.Printf("the value of pi is %f\n", pi)
+	fmt.Printf("the type of pi is %T\n", pi)
 
 }
