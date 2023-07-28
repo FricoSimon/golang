@@ -46,5 +46,7 @@ func main () {
 	const pi = 3.14
 	fmt.Printf("the value of pi is %f\n", pi)
 	fmt.Printf("the type of pi is %T\n", pi)
+	resultSprintf := fmt.Sprintf("the value of pi is %.2f and the type of pi is %T", pi, pi) // Sprintf returns a string
+	fmt.Println(resultSprintf)
 
 }
