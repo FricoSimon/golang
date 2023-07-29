@@ -102,6 +102,19 @@ func main() {
 		fmt.Println("wrong name")
 	}
 
+	//embedded struct
+	type worker struct {
+		people // take people struct
+		job    string
+	}
+	engineer := worker{
+		people: people{name: "Friko", age: 30},
+		job:    "Engineer",
+	}
+
+	fmt.Println(engineer)
+	fmt.Println(engineer.name) // access to embedded struct
+
 	// nested struct
 	type car struct {
 		model string
