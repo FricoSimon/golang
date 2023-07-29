@@ -4,19 +4,19 @@ import "fmt" // for console
 
 // function signature
 func sum(x, y int) int {
-		return x + y
-	} 
+	return x + y
+}
 
-func multiply (x, y int) int {
-		multiple := x * y
-		return multiple
-	}
+func multiply(x, y int) int {
+	multiple := x * y
+	return multiple
+}
 
-func names () (string, string) {
+func names() (string, string) {
 	return "Frico", "Simon"
 }
 
-func main () {
+func main() {
 	// call function
 	fmt.Println(sum(2, 3))
 
@@ -42,25 +42,25 @@ func main () {
 	// concatenate strings
 	fname := "Friko"
 	lname := "Simon"
-	fullName := fname + " " + lname 
+	fullName := fname + " " + lname
 
 	fmt.Println(fullName)
 
 	// sum of two numbers
 	a := 10
 	b := 2
-	fmt.Println(a + b) 
+	fmt.Println(a + b)
 
 	// anonymous function
 	func() {
 		fmt.Println("I am an anonymous function")
 	}()
-	
+
 	// anonymous function with a name to a variable
 	greeting := func() {
 		fmt.Println("I am an anonymous function with a name / variable")
-	} 
-		
+	}
+
 	greeting()
 
 	// parse float to int
@@ -75,7 +75,7 @@ func main () {
 	fmt.Printf("the type of pi is %T\n", pi)
 	resultSprintf := fmt.Sprintf("the value of pi is %.2f and the type of pi is %T", pi, pi) // Sprintf returns a string
 	fmt.Println(resultSprintf)
-	
+
 	// if statement with a short statement
 	word := "Hello"
 	//length := len(word)
@@ -83,6 +83,20 @@ func main () {
 		fmt.Println("The word has 5 characters")
 	} else {
 		fmt.Println("The word does not have 5 characters")
-	} 
-	
+	}
+
+	// struct
+	type people struct {
+		name string
+		age  int
+	}
+
+	friko := people{name: "Friko", age: 30}
+	fmt.Println(friko)
+
+	if friko.name == "Friko" {
+		fmt.Println("correct name")
+	} else {
+		fmt.Println("wrong name")
+	}
 }
