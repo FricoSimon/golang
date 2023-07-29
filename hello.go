@@ -1,6 +1,8 @@
 package main // only one main per package
 
-import "fmt" // for console
+import (
+	"fmt" // for console
+)
 
 // function signature
 func sum(x, y int) int {
@@ -99,4 +101,19 @@ func main() {
 	} else {
 		fmt.Println("wrong name")
 	}
+
+	// nested struct
+	type car struct {
+		model string
+		brand struct {
+			name    string
+			country string
+		}
+	}
+
+	ferrari := car{model: "F40", brand: struct {
+		name    string
+		country string
+	}{name: "Ferrari", country: "Italy"}}
+	fmt.Println(ferrari)
 }
