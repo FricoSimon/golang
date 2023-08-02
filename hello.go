@@ -4,11 +4,6 @@ import (
 	"fmt" // for console
 )
 
-// function signature
-func sum(x, y int) int {
-	return x + y
-}
-
 func multiply(x, y int) int {
 	multiple := x * y
 	return multiple
@@ -18,45 +13,33 @@ func names() (string, string) {
 	return "Frico", "Simon"
 }
 
-func main() {
-	// call function
-	fmt.Println(sum(2, 3))
+// nested struct
+type car struct {
+	model string
+	brand struct {
+		name    string
+		country string
+	}
+}
+type rectangle struct {
+	length, width int
+}
 
+// method without return value
+func (r rectangle) area() {
+	area := r.length * r.width
+	fmt.Println("Area of rectangle:", area)
+}
+
+func main() {
 	// call function
 	fmt.Println(multiply(2, 3))
 
-	// call function with ignored return value
-
-	// name1, name2 := names() // multiple return values
-	// fmt.Println(name1, name2)
 	name1, _ := names() // ignore second return value using dash
 	fmt.Println(name1)
 
-	// print to console
-	fmt.Print("Hello ")
-	fmt.Println("World!")
-
-	// string interpolation
-	name := "Frico" // declare variable
-	fmt.Println("Hello", name)
-	fmt.Printf("Hello %s \n", name) // use %s for string
-
-	// concatenate strings
-	fname := "Friko"
-	lname := "Simon"
-	fullName := fname + " " + lname
-
-	fmt.Println(fullName)
-
-	// sum of two numbers
-	a := 10
-	b := 2
-	fmt.Println(a + b)
-
 	// anonymous function
-	func() {
-		fmt.Println("I am an anonymous function")
-	}()
+	func() { fmt.Println("I am an anonymous function") }() // call anonymous function
 
 	// anonymous function with a name to a variable
 	greeting := func() {
@@ -83,8 +66,6 @@ func main() {
 	//length := len(word)
 	if length := len(word); length >= 5 { // scope of length is only in the if statement
 		fmt.Println("The word has 5 characters")
-	} else {
-		fmt.Println("The word does not have 5 characters")
 	}
 
 	// struct
@@ -107,6 +88,7 @@ func main() {
 		people // take people struct
 		job    string
 	}
+
 	engineer := worker{
 		people: people{name: "Friko", age: 30},
 		job:    "Engineer",
@@ -115,18 +97,14 @@ func main() {
 	fmt.Println(engineer)
 	fmt.Println(engineer.name) // access to embedded struct
 
-	// nested struct
-	type car struct {
-		model string
-		brand struct {
-			name    string
-			country string
-		}
-	}
-
+	// nested struct call
 	ferrari := car{model: "F40", brand: struct {
 		name    string
 		country string
 	}{name: "Ferrari", country: "Italy"}}
 	fmt.Println(ferrari)
+
+	// method from struct call
+	rect := rectangle{length: 10, width: 5}
+	rect.area()
 }
